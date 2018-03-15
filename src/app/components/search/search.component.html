@@ -1,0 +1,29 @@
+<div class="container my-5">
+  <div class="row justify-content-md-center">
+    <div class="col-md-10">
+
+      <label for="term">Search:</label>
+      <input class="form-control" type="text"
+             placeholder="Search a movie..."
+             (keyup.enter)="searchMovie()"
+             [(ngModel)]="search" >
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="card-columns">
+      <div class="card animated faceIn"
+           *ngFor="let movie of arrayMovies" >
+        <img class="card-img-top img-fluid"
+             [src]="movie | movieImg"
+             [alt]="movie.title">
+        <div class="card-body">
+          <h4 class="card-title">{{ movie.title }}</h4>
+          <p class="card-text text-justify">{{ movie.overview | slice:0:350 }}...</p>
+          <a [routerLink]="['/movie', movie.id]" class="btn btn-outline-primary btn-block">See more</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
