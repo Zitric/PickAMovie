@@ -13,7 +13,7 @@ export class SearchComponent {
   search = '';
   arrayMovies: Movie[] = [];
 
-  constructor( private moviesService: MoviesService,
+  constructor( public moviesService: MoviesService,
                public route: ActivatedRoute ) {
     this.route.params.subscribe( params => {
       console.log(params);
