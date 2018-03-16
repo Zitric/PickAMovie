@@ -18,6 +18,7 @@ import { MoviesService } from './provider/movies.service';
 import { SinfotoPipe } from './pipes/sinfoto.pipe';
 import { MovieImgPipe } from './pipes/movie-img.pipe';
 import { GaleryComponent } from './components/home/galery.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { GaleryComponent } from './components/home/galery.component';
     MovieComponent,
     SinfotoPipe,
     MovieImgPipe,
-    GaleryComponent
+    GaleryComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

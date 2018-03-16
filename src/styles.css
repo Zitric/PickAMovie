@@ -1,18 +1,18 @@
-body{
+body {
   padding-bottom: 200px;
 }
 
-.main-container{
+.main-container {
   margin-top: 40px;
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 }
 
-.puntero{
+.pointer {
   cursor: pointer;
 }
 
 
-.div-pic-1{
+.div-pic-1 {
   width: 100%;
   height: 300px;
   -webkit-background-size: cover;
@@ -21,24 +21,24 @@ body{
   background-size: cover;
 }
 
-.pic-titulo{
+.pic-title{
   position: absolute;
   bottom: 0px;
   left: 10px;
   padding: 10px;
+  margin-bottom: 0;
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 4px black;
 }
 
-.div-pic-2{
+.div-pic-2 {
   width: 100%;
-  height: 200px;
+  height: 160px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-
 
 
 /* Animaciones */

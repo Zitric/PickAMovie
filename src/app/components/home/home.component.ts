@@ -18,24 +18,15 @@ export class HomeComponent implements OnInit {
   constructor( public ms: MoviesService) {
 
     this.ms.getInTheatres().subscribe( response => {
-      console.log('In Theatres')
-      console.log(response.results);
-      this.arrayInTheatres = response.results;
-      return response;
+      this.arrayInTheatres = response;
     });
 
     this.ms.getPopulars().subscribe( response => {
-      console.log('Populars')
-      console.log(response.results);
-      this.arrayPopulars = response.results;
-      return response;
+      this.arrayPopulars = response;
     });
 
     this.ms.getPopularsKids().subscribe( response => {
-      console.log('Populars for Kids')
-      console.log(response.results);
-      this.arrayPopularsKids = response.results;
-      return response;
+      this.arrayPopularsKids = response;
     });
 
   }

@@ -8,4 +8,5 @@ export interface Movie {
     overview: string;
     release_date: string;
     vote_count: number;
+    tagline: string;
 }

@@ -1,11 +1,11 @@
 <div class="container my-5">
 
 
-  <app-galery [movies]="arrayInTheatres | slice:06"
-              title="In Theatres"></app-galery>
-  <app-galery [movies]="arrayPopulars | slice:06"
+  <app-galery [movies]="arrayPopulars | slice:0:6"
               title="Populars"></app-galery>
-  <app-galery [movies]="arrayPopularsKids | slice:06"
+  <app-galery [movies]="arrayInTheatres | slice:0:6"
+              title="In Theatres"></app-galery>
+  <app-galery [movies]="arrayPopularsKids | slice:0:6"
               title="Populars for Kids"></app-galery>
 
 </div>

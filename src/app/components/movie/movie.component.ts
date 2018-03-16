@@ -11,12 +11,22 @@ import { Movie } from '../../interfaces/movie.interface';
 export class MovieComponent implements OnInit {
 
   movie: Movie;
+  backTo: string;
+  search: string;
 
   constructor( private movieService: MoviesService,
                private route: ActivatedRoute ) {
 
       this.route.params.subscribe( params => {
-          this.movie = this.movieService.getMovie( Number( params.id ));
+          this.backTo = params.page;
+          if (params.search){
+            this.search = params.search;
+          }
+          this.movieService.getMovieDB( params.id )
+            .subscribe( movie => {
+              this.movie = movie;
+              console.log(movie);
+            });
       });
   }
 

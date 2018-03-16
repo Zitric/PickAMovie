@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './search.component.html',
   styles: []
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
 
   search = '';
   arrayMovies: Movie[] = [];
@@ -20,11 +20,10 @@ export class SearchComponent implements OnInit {
       if ( params.text ) {
         this.search = params.text;
         this.searchMovie();
+      } else {
+        this.moviesService.arrayMoviesSearched = [];
       }
     });
-  }
-
-  ngOnInit() {
   }
 
   searchMovie() {

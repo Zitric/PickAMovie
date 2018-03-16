@@ -24,7 +24,7 @@ export class MoviesService {
 
     const url = `${ this.urlMoviedb }/discover/movie?primary_release_date.gte=${ sinceString }&primary_release_date.lte=${ untilString }&api_key=${ this.apikey }&callback=JSONP_CALLBACK`;
 
-    return this.jsonp.get(url).map( response => response.json() );
+    return this.jsonp.get(url).map( response => response.json().results );
 
   }
 
@@ -32,14 +32,14 @@ export class MoviesService {
 
     const url = `${ this.urlMoviedb }/discover/movie?sort_by=popularity.desc&api_key=${ this.apikey }&callback=JSONP_CALLBACK`;
 
-    return this.jsonp.get(url).map( response => response.json() );
+    return this.jsonp.get(url).map( response => response.json().results );
   }
 
   getPopularsKids() {
 
     const url = `${ this.urlMoviedb }/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=${ this.apikey }&callback=JSONP_CALLBACK`;
 
-    return this.jsonp.get(url).map( response => response.json() );
+    return this.jsonp.get(url).map( response => response.json().results );
   }
 
   searchMovie( search: string ) {
@@ -52,9 +52,10 @@ export class MoviesService {
     });
   }
 
-  getMovie( id: number ) {
-    return this.arrayMoviesSearched.find( element => {
-        return id === element.id;
-    });
+  getMovieDB( id: string) {
+
+    const url = `${ this.urlMoviedb }/movie/${ id }?api_key=${ this.apikey }&callback=JSONP_CALLBACK`;
+
+    return this.jsonp.get(url).map( response => response.json() );
   }
 }
