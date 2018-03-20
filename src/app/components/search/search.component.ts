@@ -16,7 +16,6 @@ export class SearchComponent {
   constructor( public moviesService: MoviesService,
                public route: ActivatedRoute ) {
     this.route.params.subscribe( params => {
-      console.log(params);
       if ( params.text ) {
         this.search = params.text;
         this.searchMovie();

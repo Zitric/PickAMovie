@@ -10,7 +10,7 @@ import { Movie } from '../../interfaces/movie.interface';
 })
 export class MovieComponent implements OnInit {
 
-  movie: Movie;
+  movie: Movie = null;
   backTo: string;
   search: string;
 
@@ -25,7 +25,6 @@ export class MovieComponent implements OnInit {
           this.movieService.getMovieDB( params.id )
             .subscribe( movie => {
               this.movie = movie;
-              console.log(movie);
             });
       });
   }

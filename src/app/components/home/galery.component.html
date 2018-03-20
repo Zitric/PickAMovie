@@ -1,7 +1,7 @@
-<div class="container main-container">
+<div class="container main-container"  *ngIf="movies.length > 0">
   <h1>{{ title }}</h1>
   <hr>
-  <div class="row animated fadeIn" *ngIf="movies">
+  <div class="row animated fadeIn">
     <div class="col-sm-6">
 
       <div class="row">
