@@ -8,7 +8,7 @@ export class MovieImgPipe implements PipeTransform {
 
   transform( movie: any, poster: boolean = false): any {
 
-    const url = 'http://image.tmdb.org/t/p/w500';
+    const url = 'https://image.tmdb.org/t/p/w500';
 
     // console.log('estoy aqui ' + typeof movie);
 
